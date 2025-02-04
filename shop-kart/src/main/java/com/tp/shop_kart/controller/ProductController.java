@@ -23,6 +23,14 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+//    @GetMapping("/v1/{id}")
+//    public ResponseEntity<?> getpd(@PathVariable long id){
+//
+//            Product product=productService.getProductById(id).orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + productId));
+//        return ResponseEntity.ok(product);
+//            //return ResponseEntity.ok(product);
+//    }
+
     @PostMapping
     public Product createProduct(@RequestBody Product product){
         return productService.saveProduct(product);
