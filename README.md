@@ -50,30 +50,5 @@ This is a basic e-commerce backend project built using **Spring Boot**. It provi
  
 ---
  
-## **Setup and Run the Project**
- 
-### **Prerequisites**
-- Java 17 or higher.
-- Maven 3.x.
-- IDE (e.g., IntelliJ IDEA, Eclipse).
- 
-### **Steps**
-1. **Clone the Repository**:
-   ```bash
-git clone https://github.com/your-username/ecommerce-backend.git
-   cd ecommerce-backend
-   ```
- 
-2. **Build the Project**:
-   ```bash
-   mvn clean install
-   ```
- 
-3. **Run the Application**:
-   ```bash
-   mvn spring-boot:run
-   ```
- 
-4. **Access the Application**:
-- The application will run on `http://localhost:8080`.
+
  
