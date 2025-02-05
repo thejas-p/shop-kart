@@ -23,4 +23,10 @@ public class GlobalExceptionHandler {
         CustomErrorResponse errorResponse = new CustomErrorResponse(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
+    public ResponseEntity<?> handleProductNotFoundException(ArrayIndexOutOfBoundsException exception){
+        CustomErrorResponse productNotFound = new CustomErrorResponse(LocalDateTime.now(), exception.getMessage(), "Product Not Found");
+        return new ResponseEntity<>(productNotFound, HttpStatus.NOT_FOUND);
+    }
 }
