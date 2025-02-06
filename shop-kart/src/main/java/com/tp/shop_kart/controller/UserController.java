@@ -2,6 +2,7 @@ package com.tp.shop_kart.controller;
 
 import com.tp.shop_kart.model.User;
 import com.tp.shop_kart.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class UserController {
     @Autowired
     UserService userService;
     @PostMapping()
-    public ResponseEntity<?> addUser(@RequestBody User user1){
+    public ResponseEntity<?> addUser(@Valid @RequestBody User user1){
         User user=userService.createNewUser(user1);
         return ResponseEntity.ok(user);
     }

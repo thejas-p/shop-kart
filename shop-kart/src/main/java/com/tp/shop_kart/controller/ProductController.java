@@ -2,6 +2,7 @@ package com.tp.shop_kart.controller;
 
 import com.tp.shop_kart.model.Product;
 import com.tp.shop_kart.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class ProductController {
 //    }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product){
+    public Product createProduct(@Valid @RequestBody Product product){
         return productService.saveProduct(product);
     }
 
