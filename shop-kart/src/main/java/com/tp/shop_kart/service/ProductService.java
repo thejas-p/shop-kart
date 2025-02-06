@@ -29,4 +29,11 @@ public class ProductService {
     public Product saveProduct(Product product){
         return productRepository.save(product);
     }
+
+    public void deleteProduct(Long id){
+        if (!productRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Product not found with id: " + id);
+        }
+        productRepository.deleteById(id);
+    }
 }

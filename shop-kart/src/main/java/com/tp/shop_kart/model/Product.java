@@ -15,6 +15,8 @@ import lombok.Setter;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @NotBlank(message = "id is required")
     private long id;
 
    // @NotNull(message = "")

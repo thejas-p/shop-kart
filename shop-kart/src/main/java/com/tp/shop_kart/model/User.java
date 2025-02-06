@@ -14,6 +14,7 @@ import lombok.Setter;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotBlank(message = "id is required")
     private long id;
     @NotBlank(message = "Username is required")
     private String username;

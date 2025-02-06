@@ -4,6 +4,7 @@ import com.tp.shop_kart.model.Product;
 import com.tp.shop_kart.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id){
+    public Product getProductById(@Valid @PathVariable Long id){
         return productService.getProductById(id);
     }
 
@@ -35,6 +36,11 @@ public class ProductController {
     @PostMapping
     public Product createProduct(@Valid @RequestBody Product product){
         return productService.saveProduct(product);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteProduct(@PathVariable Long id){
+        productService.deleteProduct(id);
+        return ResponseEntity.ok("deleted product with ID "+id);
     }
 
 }
