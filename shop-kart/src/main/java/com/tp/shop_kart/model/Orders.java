@@ -15,6 +15,7 @@ public class Orders {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
 
     private Long id;
+
     @ManyToOne
     private User user;
     @ManyToMany
